@@ -7,9 +7,15 @@ footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
 ---
 
 
-**Виконав(-ла):** 
+**Виконавли:** 
 
-*студент(-ка) 2-го курсу, групи (шифр групи)*<span padding-right:5em></span> **[ім’я ПРІЗВИЩЕ] [Посилання email, tg, fb]**
+*студенти 2-го курсу, групи ІО-15*<br/>
+<span padding-right:5em></span> **Шнайдрук Андрій** <a href="https://t.me/shnaidruk" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Гонтар Даніїл** <a href="https://t.me/dadaya23" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Усик Артем** <a href="https://t.me/xrtemsk" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Никонюк Юрій** <a href="https://t.me/Aqiulance" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Чубенко Юрій** <a href="https://t.me/yuvch" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Потапюк Данило** <a href="https://t.me/Ky4erok" target="_blank">Telegram</a><br/>
 
 
 **Керівник**
