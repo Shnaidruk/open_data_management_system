@@ -16,6 +16,7 @@ footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
 <span padding-right:5em></span> **Никонюк Юрій** <a href="https://t.me/Aqiulance" target="_blank">Telegram</a><br/>
 <span padding-right:5em></span> **Чубенко Юрій** <a href="https://t.me/yuvch" target="_blank">Telegram</a><br/>
 <span padding-right:5em></span> **Потапюк Данило** <a href="https://t.me/Ky4erok" target="_blank">Telegram</a><br/>
+<span padding-right:5em></span> **Жердєв Данило** <a href="https://t.me/borsalin_o" target="_blank">Telegram</a><br/>
 
 
 **Керівник**
