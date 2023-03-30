@@ -35,7 +35,7 @@
  ### Порівняльна таблиця
 
 - ✅ - реалізовано вдало
-- ⚠️ - реалізовано погано
+- 🔶 - реалізовано погано
 - ❌ - не реалізовано
 
 <table>
@@ -56,7 +56,7 @@
             <td style="text-align: center;" rowspan="5">Functionality (функциональні вимоги)</td>
             <td style="text-align: center;">Керування наборами данних</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">❌</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">❌</td>
@@ -73,9 +73,9 @@
         <tr>
             <td style="text-align: center;">Пошук</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
         </tr>
@@ -85,7 +85,7 @@
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">✅</td>
         </tr>
         <tr>
@@ -95,7 +95,7 @@
             <td style="text-align: center;">❌</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">❌</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
         </tr>
         <tr>
             <td style="text-align: center;" rowspan="3">Usability (вимоги до зручності роботи)</td>
@@ -111,18 +111,18 @@
             <td style="text-align: center;">Дружній інтерфейс</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
-            <td style="text-align: center;">⚠</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
+            <td style="text-align: center;">🔶</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">❌</td>
         </tr>
         <tr>
             <td style="text-align: center;">Документація</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">❌</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">✅</td>
         </tr>
         <tr>
@@ -147,8 +147,8 @@
         <tr>
             <td style="text-align: center;">Актуальність даних</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠</td>
-            <td style="text-align: center;">⚠</td>
+            <td style="text-align: center;">🔶</td>
+            <td style="text-align: center;">🔶</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">✅</td>
@@ -157,7 +157,7 @@
             <td style="text-align: center;" rowspan="2">Performance (вимоги до продуктивності)</td>
             <td style="text-align: center;">Продуктивність за PageSpeed Insights</td>
             <td style="text-align: center;">✅</td>
-            <td style="text-align: center;">⚠85</td>
+            <td style="text-align: center;">🔶85</td>
             <td style="text-align: center;">✅89</td>
             <td style="text-align: center;">✅98</td>
             <td style="text-align: center;">❌56</td>
