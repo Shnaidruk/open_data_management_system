@@ -35,7 +35,7 @@
  ### Порівняльна таблиця
 
 - ✅ - реалізовано вдало
-- ⚠ - реалізовано погано
+- ⚠️ - реалізовано погано
 - ❌ - не реалізовано
 
 <table>
@@ -53,7 +53,7 @@
     </thead>
     <tbody>
         <tr>
-            <td style="text-align: center;" rowspan="4">Functionality (функциональні вимоги)</td>
+            <td style="text-align: center;" rowspan="5">Functionality (функциональні вимоги)</td>
             <td style="text-align: center;">Керування наборами данних</td>
             <td style="text-align: center;">✅</td>
             <td style="text-align: center;">⚠</td>
@@ -161,7 +161,7 @@
             <td style="text-align: center;">✅89</td>
             <td style="text-align: center;">✅98</td>
             <td style="text-align: center;">❌56</td>
-            <td style="text-align: center;">👎(29)</td>
+            <td style="text-align: center;">❌49</td>
         </tr>
         <tr>
             <td style="text-align: center;">Стійкість до збоїв</td>
