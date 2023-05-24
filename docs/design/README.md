@@ -5,6 +5,7 @@
 
 @startuml
 entity Category
+entity Category.name  #ffffff
 entity Category.id_data  #ffffff
 entity Category.id_user #ffffff 
  
@@ -13,11 +14,10 @@ entity Data
 entity Data.id  #ffffff 
 entity Data.name  #ffffff 
 entity Data.description  #ffffff 
-entity Data.category_id  #ffffff
 entity Data.date_create #ffffff
 entity Data.id_creator #ffffff
 entity Data.file_csv #ffffff
-entity Data.id_category #ffffff
+entity Data.vis_exist #ffffff
 
 
 
@@ -50,12 +50,12 @@ entity Donate.id #ffffff
 entity Donate.details #ffffff 
 entity Donate.description #ffffff 
 
-User "1,1" --d- "0,*" Category
+User "1,1" --l- "0,*" Category
 Category "0,*" -d-- "1,1" Data
-User "0,*" --d- "1,1" Group
-Access "0,*" -r-- "1,1" Group
+User "0,*" --r- "1,1" Group
+Access "0,*" -l-- "1,1" Group
 Access "0,*" -d-- "1,1" Permission
-User "0,*" --r- "1,1" Donate
+User "0,*" --d- "1,1" Donate
 
 User.id  -d-* User
 User.username  -d-* User
@@ -77,14 +77,14 @@ Data.vis_exist -u-* Data
 
 
 Category.name -r-* Category 
-Category.id_data -l-* Category 
+Category.id_data -u-* Category 
 Category.id_user -u-* Category
 
 Group.id -u-* Group
 Group.name -u-* Group
 
 Access.id_group -u-* Access
-Access.id_permission -r-* Access
+Access.id_permission -u-* Access
    
 Permission.id  -u-* Permission
 Permission.name -u-* Permission
