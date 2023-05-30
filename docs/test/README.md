@@ -15,7 +15,7 @@
 ![image1](./usbyid.png)
 
 ## Видалити користувача
-![image1](./usdelete.png)
+![image1](./userdelete.png)
 
 ![image1](./usbyid1.png)
 
