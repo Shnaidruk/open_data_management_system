@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Реалізація інформаційного та програмного забезпечення | Система управління відкритими данними</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/open_data_management_system/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Лабораторні роботи з дисципліни &quot;Організація баз даних&quot;">
+    
+    <link rel="preload" href="/open_data_management_system/assets/css/0.styles.42f13bf0.css" as="style"><link rel="preload" href="/open_data_management_system/assets/js/app.846bef6e.js" as="script"><link rel="preload" href="/open_data_management_system/assets/js/2.2ff77d63.js" as="script"><link rel="preload" href="/open_data_management_system/assets/js/23.ce7ee692.js" as="script"><link rel="prefetch" href="/open_data_management_system/assets/js/10.6e2d7b26.js"><link rel="prefetch" href="/open_data_management_system/assets/js/11.b3c33f10.js"><link rel="prefetch" href="/open_data_management_system/assets/js/12.a3171245.js"><link rel="prefetch" href="/open_data_management_system/assets/js/13.70eb2ced.js"><link rel="prefetch" href="/open_data_management_system/assets/js/14.9d1431a4.js"><link rel="prefetch" href="/open_data_management_system/assets/js/15.13569df5.js"><link rel="prefetch" href="/open_data_management_system/assets/js/16.48e8e6d9.js"><link rel="prefetch" href="/open_data_management_system/assets/js/17.673289ce.js"><link rel="prefetch" href="/open_data_management_system/assets/js/18.1dc446b7.js"><link rel="prefetch" href="/open_data_management_system/assets/js/19.1e078b5b.js"><link rel="prefetch" href="/open_data_management_system/assets/js/20.12fc5fe8.js"><link rel="prefetch" href="/open_data_management_system/assets/js/21.69b90a07.js"><link rel="prefetch" href="/open_data_management_system/assets/js/22.1c2e82e7.js"><link rel="prefetch" href="/open_data_management_system/assets/js/24.390ff56b.js"><link rel="prefetch" href="/open_data_management_system/assets/js/25.438e3d6b.js"><link rel="prefetch" href="/open_data_management_system/assets/js/26.d4420a7c.js"><link rel="prefetch" href="/open_data_management_system/assets/js/3.0d793b50.js"><link rel="prefetch" href="/open_data_management_system/assets/js/4.f4e3418f.js"><link rel="prefetch" href="/open_data_management_system/assets/js/5.009de7c3.js"><link rel="prefetch" href="/open_data_management_system/assets/js/6.07aa3cab.js"><link rel="prefetch" href="/open_data_management_system/assets/js/7.bc58ede0.js"><link rel="prefetch" href="/open_data_management_system/assets/js/8.887a42a3.js"><link rel="prefetch" href="/open_data_management_system/assets/js/9.064b84aa.js">
+    <link rel="stylesheet" href="/open_data_management_system/assets/css/0.styles.42f13bf0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/open_data_management_system/" class="home-link router-link-active"><!----> <span class="site-name">Система управління відкритими данними</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/open_data_management_system/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/Shnaidruk/open_data_management_system" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/open_data_management_system/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/Shnaidruk/open_data_management_system" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/open_data_management_system/intro/" class="sidebar-link">Вступ</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/open_data_management_system/requirements/" class="sidebar-heading clickable"><span>Розроблення загальних вимог до системи</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/open_data_management_system/use%20cases/" class="sidebar-link">Розроблення вимог до функціональности системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/use%20cases/#сценаріі-використання" class="sidebar-link">Сценарії використання</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/use%20cases/#користувач" class="sidebar-link">Користувач</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/use%20cases/#адміністратор" class="sidebar-link">Адміністратор</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/use%20cases/#редактор" class="sidebar-link">Редактор</a></li></ul></li><li><a href="/open_data_management_system/design/" class="sidebar-link">Проектування інформаційного забезпечення</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#модель-бізнес-об-єктів" class="sidebar-link">Модель бізнес-об'єктів</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#опис-моделеи" class="sidebar-link">Опис моделей</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#user" class="sidebar-link">User</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#group" class="sidebar-link">Group</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#access" class="sidebar-link">Access</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#permission" class="sidebar-link">Permission</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#category" class="sidebar-link">Category</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#data" class="sidebar-link">Data</a></li></ul></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#er-модель" class="sidebar-link">ER-модель</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/design/#реляціина-схема" class="sidebar-link">Реляційна схема</a></li></ul></li><li><a href="/open_data_management_system/software/" aria-current="page" class="active sidebar-link">Реалізація інформаційного та програмного забезпечення</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="sidebar-link">SQL-скрипт для створення на початкового наповнення бази даних</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#restfull-сервіс-для-управління-даними" class="sidebar-link">RESTfull сервіс для управління даними</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#налаштування-express-сервера" class="sidebar-link">Налаштування Express сервера</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#підключення-до-mysql" class="sidebar-link">Підключення до MySQL</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#створення-контроллерів-додатка" class="sidebar-link">Створення контроллерів додатка</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#створення-гловальних-обробників-помилок" class="sidebar-link">Створення гловальних обробників помилок</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/software/#створення-routes" class="sidebar-link">Створення routes</a></li></ul></li></ul></li><li><a href="/open_data_management_system/test/" class="sidebar-link">Тестування працездатності системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#показати-всіх-наявних-користувачів" class="sidebar-link">Показати всіх наявних користувачів</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#створити-нового-користувача" class="sidebar-link">Створити нового користувача</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#оновити-інформацію-про-користувача" class="sidebar-link">Оновити інформацію про користувача</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#видалити-користувача" class="sidebar-link">Видалити користувача</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#показати-всю-наявну-в-базі-інформацію" class="sidebar-link">Показати всю наявну в базі інформацію</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#створити-новии-фаил-з-інформацією" class="sidebar-link">Створити новий файл з інформацією</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#оновити-редагувати-вже-наявну-інформацію" class="sidebar-link">Оновити(редагувати) вже наявну інформацію</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#видалити-інформацію-з-бази" class="sidebar-link">Видалити інформацію з бази</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#показати-всі-групи-користувачів" class="sidebar-link">Показати всі групи користувачів</a></li><li class="sidebar-sub-header"><a href="/open_data_management_system/test/#показати-всі-наявні-в-системі-можливості" class="sidebar-link">Показати всі наявні в системі можливості</a></li></ul></li><li><a href="/open_data_management_system/conclusion/" class="sidebar-link">Висновки</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="реалізація-інформаціиного-та-програмного-забезпечення"><a href="#реалізація-інформаціиного-та-програмного-забезпечення" class="header-anchor">#</a> Реалізація інформаційного та програмного забезпечення</h1> <h2 id="sql-скрипт-для-створення-на-початкового-наповнення-бази-даних"><a href="#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="header-anchor">#</a> SQL-скрипт для створення на початкового наповнення бази даних</h2> <div class="language-mysql extra-class"><pre class="language-text"><code>-- MySQL Script generated by MySQL Workbench
+-- Tue May 30 00:07:17 2023
+-- Model: New Model    Version: 1.0
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema open_data_management_system
+-- -----------------------------------------------------
+-- 
+-- 
+DROP SCHEMA IF EXISTS `open_data_management_system` ;
+
+-- -----------------------------------------------------
+-- Schema open_data_management_system
+--
+-- 
+-- 
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `open_data_management_system` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+USE `open_data_management_system` ;
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Group`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Group` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Group` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `idGroup_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Donate`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Donate` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Donate` (
+  `id` INT NOT NULL,
+  `details` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`User`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`User` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`User` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `avatar` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `id_group` INT NOT NULL,
+  `id_donate` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
+  INDEX `fk_User_Group1_idx` (`id_group` ASC) VISIBLE,
+  INDEX `fk_User_Donate1_idx` (`id_donate` ASC) VISIBLE,
+  CONSTRAINT `fk_User_Group1`
+    FOREIGN KEY (`id_group`)
+    REFERENCES `open_data_management_system`.`Group` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_User_Donate1`
+    FOREIGN KEY (`id_donate`)
+    REFERENCES `open_data_management_system`.`Donate` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Permission` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Permission` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Data`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Data` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Data` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(45) NOT NULL,
+  `date_create` DATE NOT NULL,
+  `id_creator` INT NOT NULL,
+  `file_csv` VARCHAR(45) NOT NULL,
+  `vis_exist` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Category`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Category` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Category` (
+  `name` VARCHAR(45) NOT NULL,
+  `id_data` INT NOT NULL,
+  `id_user` INT NOT NULL,
+  INDEX `fk_Category_Data1_idx` (`id_data` ASC) VISIBLE,
+  INDEX `fk_Category_User1_idx` (`id_user` ASC) VISIBLE,
+  CONSTRAINT `fk_Category_Data1`
+    FOREIGN KEY (`id_data`)
+    REFERENCES `open_data_management_system`.`Data` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Category_User1`
+    FOREIGN KEY (`id_user`)
+    REFERENCES `open_data_management_system`.`User` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `open_data_management_system`.`Access`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `open_data_management_system`.`Access` ;
+
+CREATE TABLE IF NOT EXISTS `open_data_management_system`.`Access` (
+  `id_group` INT NOT NULL,
+  `id_permission` INT NOT NULL,
+  INDEX `fk_Access_Group1_idx` (`id_group` ASC) VISIBLE,
+  INDEX `fk_Access_Permission1_idx` (`id_permission` ASC) VISIBLE,
+  CONSTRAINT `fk_Access_Group1`
+    FOREIGN KEY (`id_group`)
+    REFERENCES `open_data_management_system`.`Group` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Access_Permission1`
+    FOREIGN KEY (`id_permission`)
+    REFERENCES `open_data_management_system`.`Permission` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+</code></pre></div><h2 id="restfull-сервіс-для-управління-даними"><a href="#restfull-сервіс-для-управління-даними" class="header-anchor">#</a> RESTfull сервіс для управління даними</h2> <h3 id="налаштування-express-сервера"><a href="#налаштування-express-сервера" class="header-anchor">#</a> Налаштування Express сервера</h3> <div class="language- extra-class"><pre class="language-text"><code>const express = require(&quot;express&quot;);
+const cors = require(&quot;cors&quot;);
+const router = require(&quot;./routes&quot;);
+const AppError = require(&quot;./utils/appError&quot;);
+const errorHandler = require(&quot;./utils/errorHandler&quot;);
+
+
+const app = express()
+const PORT = 3000
+
+app.use(express.json());
+app.use(cors());
+app.use(&quot;/api&quot;, router);
+
+app.all(&quot;*&quot;, (req, res, next) =&gt; {
+    next(new AppError(`The URL ${req.originalUrl} does not exist`, 404))
+})
+app.use(errorHandler)
+
+
+app.listen(PORT, ()=&gt;{
+    console.log(`server running on port ${PORT}`)
+})
+
+module.exports = app
+</code></pre></div><h3 id="підключення-до-mysql"><a href="#підключення-до-mysql" class="header-anchor">#</a> Підключення до MySQL</h3> <div class="language- extra-class"><pre class="language-text"><code>const mysql = require(&quot;mysql&quot;)
+
+const conn = mysql.createConnection({
+    host: &quot;localhost&quot;,
+    user: &quot;root&quot;,
+    password: &quot;&quot;,
+    database: &quot;open_data_management_system&quot;,
+});
+
+conn.connect();
+
+module.exports = conn;
+</code></pre></div><h3 id="створення-контроллерів-додатка"><a href="#створення-контроллерів-додатка" class="header-anchor">#</a> Створення контроллерів додатка</h3> <div class="language- extra-class"><pre class="language-text"><code>const AppError = require(&quot;../utils/appError&quot;)
+const conn = require(&quot;../service/db&quot;)
+
+
+exports.getAllUsers = (req, res, next) =&gt; {
+    conn.query(&quot;SELECT * FROM user&quot;, function (err, data, fields) {
+        if (err) return next(new AppError(err));
+            res.status(200).json({
+            status: &quot;success&quot;,
+            length: data?.length,
+            data: data,
+        });
+    });
+};
+    
+    
+exports.createUser = (req, res, next) =&gt; {
+    if (!req.body) return next(new AppError(&quot;No form data found&quot;, 404));
+    const values = [
+        req.body.username,
+        req.body.email,
+        req.body.password,
+        req.body.avatar,
+        req.body.first_name,
+        req.body.last_name,
+        req.body.id_group,
+        req.body.id_donate,
+    ];
+    conn.query(
+        &quot;INSERT INTO `user` (username, email, password, avatar, first_name, last_name, id_group, id_donate) VALUES (?)&quot;,
+        [values],
+        function (err, data, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(200).json({
+                status: &quot;success&quot;,
+                message: &quot;user added!&quot;,
+            });
+        }
+    );
+};
+    
+    
+exports.getUserById = (req, res, next) =&gt; {
+    if (!req.params.id) {
+        return next(new AppError(&quot;No user id found&quot;, 404));
+    }
+    conn.query(
+        &quot;SELECT * FROM User WHERE id = ?&quot;,
+        [req.params.id],
+        function (err, data, fields) {
+        if (err) return next(new AppError(err, 500));
+            res.status(200).json({
+            status: &quot;success&quot;,
+                length: data?.length,
+                data: data,
+            });
+        }
+    );
+};
+    
+    
+exports.updateUser = (req, res, next) =&gt; {
+    if (!req.params.id) {
+        return next(new AppError(&quot;No user id found&quot;, 404));
+    }
+    conn.query(
+        &quot;UPDATE User SET username=?, email=?, password=?, first_name=?, last_name=?, id_group=? WHERE id=?&quot;,
+        [
+            req.body.username,
+            req.body.email,
+            req.body.password,
+            req.body.first_name,
+            req.body.last_name,
+            req.body.id_group,
+            req.params.id,
+    ],
+    function (err, data, fields) {
+        if (err) return next(new AppError(err, 500));
+            res.status(201).json({
+                status: &quot;success&quot;,
+                message: &quot;user info updated!&quot;,
+            });
+        }
+    );
+};
+    
+    
+exports.deleteUser = (req, res, next) =&gt; {
+    if (!req.params.id) {
+        return next(new AppError(&quot;No todo id found&quot;, 404));
+    }
+    conn.query(
+        &quot;DELETE FROM User WHERE id=?&quot;,
+            [req.params.id],
+            function (err, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(201).json({
+                status: &quot;success&quot;,
+                message: &quot;user deleted!&quot;,
+            });
+        }
+    );
+};
+
+exports.AllData = (req, res, next) =&gt; {
+    conn.query(&quot;SELECT * FROM data&quot;, function (err, data, fields) {
+        if (err) return next(new AppError(err));
+            res.status(200).json({
+            status: &quot;success&quot;,
+            length: data?.length,
+            data: data,
+        });
+    });
+};
+
+
+exports.searchDataByName = (req, res, next) =&gt; {
+    if (!req.params.name) {
+        return next(new AppError(&quot;No such data&quot;, 404));
+    }
+    conn.query(
+        &quot;SELECT * FROM Data WHERE name LIKE ?&quot;,
+        [req.params.name],
+        function (err, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(200).json({
+                status: &quot;success&quot;,
+                message: &quot;data is found&quot;,
+                data: fields,
+            });
+        }
+    );
+};
+
+exports.updateData = (req, res, next) =&gt; {
+    if (!req.params.name) {
+        return next(new AppError(&quot;No such data&quot;, 404));
+    }
+    conn.query(
+        &quot;UPDATE Data SET description=?, date_create=?, id_creator=?, file_csv=?, vis_exist=? WHERE name=?&quot;,
+        [
+            req.body.description,
+            req.body.date_create,
+            req.body.id_creator,
+            req.body.file_csv,
+            req.body.vis_exist,
+            req.params.name,
+        ],
+        function (err, data, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(200).json({
+                status: &quot;success&quot;,
+                message: &quot;data info updated!&quot;,
+            });
+        }
+    );
+};
+
+exports.deleteData = (req, res, next) =&gt; {
+    if (!req.params.name) {
+        return next(new AppError(&quot;No todo id found&quot;, 404));
+    }
+    conn.query(
+        &quot;DELETE FROM data WHERE name=?&quot;,
+            [req.params.name],
+            function (err, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(201).json({
+                status: &quot;success&quot;,
+                message: &quot;data deleted!&quot;,
+            });
+        }
+    );
+};
+
+exports.createData = (req, res, next) =&gt; {
+    if (!req.body) return next(new AppError(&quot;No form data found&quot;, 404));
+    const values = [
+        req.body.id,
+        req.body.name,
+        req.body.description,
+        req.body.date_create,
+        req.body.id_creator,
+        req.body.file_csv,
+        req.body.vis_exist,
+    ];
+    conn.query(
+        &quot;INSERT INTO data (id, name, description, date_create, id_creator, file_csv, vis_exist) VALUES(?)&quot;,
+        [values],
+        function (err, data, fields) {
+            if (err) return next(new AppError(err, 500));
+            res.status(200).json({
+                status: &quot;success&quot;,
+                message: &quot;data added!&quot;,
+            });
+        }
+    );
+};
+
+exports.showGroup = (req, res, next) =&gt; {
+    conn.query(&quot;SELECT * FROM `group`&quot;, function (err, data, fields) {
+        if (err) return next(new AppError(err));
+            res.status(200).json({
+            status: &quot;succes&quot;,
+            length: data?.length,
+            data: data,
+        });
+    });
+};
+
+
+exports.showPermission = (req, res, next) =&gt; {
+    conn.query(&quot;SELECT * FROM permission&quot;, function (err, data, fields) {
+        if (err) return next(new AppError(err));
+            res.status(200).json({
+            status: &quot;succes&quot;,
+            length: data?.length,
+            data: data,
+        });
+    });
+};
+
+</code></pre></div><h3 id="створення-гловальних-обробників-помилок"><a href="#створення-гловальних-обробників-помилок" class="header-anchor">#</a> Створення гловальних обробників помилок</h3> <div class="language- extra-class"><pre class="language-text"><code>class AppError extends Error{
+    constructor(msg, statusCode){
+        super(msg);
+
+        this.statusCode = statusCode;
+        this.error = `${statusCode}`.startsWith(&quot;4&quot;) ? &quot;fail&quot; : &quot;error&quot;;
+        this.isOperational = true;
+
+        Error.captureStackTrace(this, this.constructor)
+    }
+}
+module.exports = AppError;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>module.exports = (err, req, res, next) =&gt; {
+    err.statusCode = err.statusCode || 500;
+    err.status = err.status || &quot;error&quot;;
+    res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message,
+    })
+}
+</code></pre></div><h3 id="створення-routes"><a href="#створення-routes" class="header-anchor">#</a> Створення routes</h3> <div class="language- extra-class"><pre class="language-text"><code>const express = require(&quot;express&quot;);
+const controllers = require(&quot;../controllers&quot;);
+const router = express.Router();
+
+router.route(&quot;/User/:id&quot;)
+  .get(controllers.getUserById)
+  .put(controllers.updateUser)
+  .delete(controllers.deleteUser);
+
+router.route(&quot;/getAllUsers&quot;)
+  .get(controllers.getAllUsers);
+
+router.route(&quot;/User&quot;)
+  .get(controllers.getAllUsers)
+  .post(controllers.createUser);
+  
+
+router.route(&quot;/Data&quot;)
+  .get(controllers.AllData)
+
+router.route(&quot;/Data/:name&quot;)
+  .get(controllers.searchDataByName)
+  .post(controllers.createData)
+  .put(controllers.updateData)
+  .delete(controllers.deleteData);
+
+router.route(&quot;/Group&quot;)
+  .get(controllers.showGroup);
+
+module.exports = router;
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Останнє оновлення:</span> <span class="time">5/30/2023, 1:56:52 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/open_data_management_system/design/" class="prev">
+        Проектування інформаційного забезпечення
+      </a></span> <span class="next"><a href="/open_data_management_system/test/">
+        Тестування працездатності системи
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/open_data_management_system/assets/js/app.846bef6e.js" defer></script><script src="/open_data_management_system/assets/js/2.2ff77d63.js" defer></script><script src="/open_data_management_system/assets/js/23.ce7ee692.js" defer></script>
+  </body>
+</html>
